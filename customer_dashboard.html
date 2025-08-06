@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Dashboard</title>
+  <link rel="stylesheet" href="css/customer_dashboard.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-item" onclick="showTab('book')">Book Vehicle</div>
+    <div class="nav-item" onclick="showTab('profile')">Edit Profile</div>
+    <div class="nav-item" onclick="showTab('rentals')">My Rentals</div>
+  </div>
+
+  <div id="book" class="tab-content">
+    <h2>Book a Vehicle</h2>
+    <form>
+      <label>Pickup Location:</label><br>
+      <input type="text" name="pickup" required><br><br>
+
+      <label>Drop Location:</label><br>
+      <input type="text" name="drop" required><br><br>
+
+      <label>Start Date:</label><br>
+      <input type="date" name="start_date" required><br><br>
+
+      <label>End Date:</label><br>
+      <input type="date" name="end_date" required><br><br>
+
+      <input type="submit" value="Book Now">
+    </form>
+  </div>
+
+  <div id="profile" class="tab-content" style="display:none">
+    <h2>Edit Profile</h2>
+    <form>
+      <label>Customer Name:</label><br>
+      <input type="text" name="cname" required><br><br>
+
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br><br>
+
+      <label>Phone:</label><br>
+      <input type="text" name="phone" required><br><br>
+
+      <label>Address:</label><br>
+      <textarea name="address" rows="3" required></textarea><br><br>
+
+      <input type="submit" value="Update Profile">
+    </form>
+  </div>
+
+  <div id="rentals" class="tab-content" style="display:none">
+    <h2>My Rentals</h2>
+    <form>
+      <label>Search by Date:</label><br>
+      <input type="date" name="rental_date"><br><br>
+
+      <label>Vehicle Number (optional):</label><br>
+      <input type="text" name="vnum"><br><br>
+
+      <input type="submit" value="View Rentals">
+    </form>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

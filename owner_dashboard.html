@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="css/owner_dashboard.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-item" onclick="showTab('add')">Add Vehicle</div>
+    <div class="nav-item" onclick="showTab('profile')">Edit Profile</div>
+    <div class="nav-item" onclick="showTab('bookings')">Bookings</div>
+  </div>
+
+  <div id="add" class="tab-content">
+    <h2>Add Vehicle</h2>
+    <form>
+      <label>Vehicle Name:</label><br>
+      <input type="text" name="vname" required><br><br>
+
+      <label>Vehicle Number:</label><br>
+      <input type="text" name="vnumber" required><br><br>
+
+      <label>Type (Bike/Car):</label><br>
+      <input type="text" name="type" required><br><br>
+
+      <label>Price per Day:</label><br>
+      <input type="number" name="price" required><br><br>
+
+      <input type="submit" value="Add Vehicle">
+    </form>
+  </div>
+
+  <div id="profile" class="tab-content" style="display:none">
+    <h2>Edit Profile</h2>
+    <form>
+      <label>Owner Name:</label><br>
+      <input type="text" name="oname" required><br><br>
+
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br><br>
+
+      <label>Phone:</label><br>
+      <input type="text" name="phone" required><br><br>
+
+      <label>Address:</label><br>
+      <textarea name="address" rows="3" required></textarea><br><br>
+
+      <input type="submit" value="Update Profile">
+    </form>
+  </div>
+
+  <div id="bookings" class="tab-content" style="display:none">
+    <h2>Bookings</h2>
+    <form>
+      <label>Search by Date:</label><br>
+      <input type="date" name="booking_date"><br><br>
+
+      <label>Vehicle Number:</label><br>
+      <input type="text" name="vnum"><br><br>
+
+      <input type="submit" value="View Bookings">
+    </form>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

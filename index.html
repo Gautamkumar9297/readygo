@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>READY GO - Home</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #007bff;
+    }
+
+    .nav-buttons a {
+      display: block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #007bff; /* Default color */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      width: 220px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WELCOME TO READY GO</h1>
+  <div class="nav-buttons">
+    <a href="owner_login.html">Owner Login</a>
+    <a href="owner_register.html">Owner Registration</a>
+    <a href="customer_login.html">Customer Login</a>
+    <a href="customer_register.html">Customer Registration</a>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.nav-buttons a');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        button.style.backgroundColor = '#0056b3';
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.backgroundColor = '#007bff';
+      });
+    });
+  </script>
+</body>
+</html>
